@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController.js');
 
-// Home page - show all inventory items
-router.get('/', indexController.getElements);
+router.get('/', indexController.test);
 
 module.exports = router;
