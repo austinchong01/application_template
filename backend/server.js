@@ -25,6 +25,9 @@ app.get("/health", (req, res) => {
   });
 });
 
+
 app.use("/", indexRouter);
 
-app.listen(PORT, () => console.log(`Express app listening on port ${process.env.PORT}!`));
+
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log(`Express app listening on port ${PORT}!`));
