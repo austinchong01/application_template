@@ -1,25 +1,17 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import { api } from './services/api'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import "./App.css";
+import Test from './components/Test';
+import Health from './components/Test';
 
 function App() {
-  const [message, setMessage] =  useState("");
-  
-  useEffect(() => {
-    const testBackend = async () => {
-      const result = await api.test();
-      if (result.success) setMessage(result.data);
-    };
-    testBackend();
-  }, []);
-
   return (
-    <>
-      <div>
-        {message}
-      </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/test" element={<Test />} />
+        <Route path="/health" element={<Health />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
